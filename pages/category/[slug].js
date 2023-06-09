@@ -113,10 +113,14 @@ export async function getStaticProps({ params: { slug } }) {
     );
 
     return {
-        props: {
+        paths : [
+      { props: {
             category,
             products,
             slug,
         },
+    }
+    ],
+    fallback :true,
     };
 }
