@@ -198,12 +198,9 @@ export async function getStaticPaths() {
     }));
 
     return {
-        paths : [
-            paths,
-           
-        ],
+        paths,
         fallback: false,
-        };
+    };
 }
 
 export async function getStaticProps({ params: { slug } }) {
