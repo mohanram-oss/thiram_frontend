@@ -98,8 +98,11 @@ export async function getStaticPaths() {
     }));
 
     return {
+        paths : [
         paths,
-        fallback: false,
+       
+    ],
+    fallback: false,
     };
 }
 
@@ -113,14 +116,14 @@ export async function getStaticProps({ params: { slug } }) {
     );
 
     return {
-        paths : [
-      { props: {
+        
+       props: {
             category,
             products,
             slug,
         },
-    }
-    ],
+    
+   
     fallback :true,
     };
 }
