@@ -2,6 +2,8 @@ import HeroBanner from "@/components/HeroBanner";
 import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/Wrapper";
 import { fetchDataFromApi } from "@/utils/api";
+
+
 export default function Home({ products }) {
     return (
         <main>
@@ -24,16 +26,9 @@ export default function Home({ products }) {
                     {products?.data?.map((product) => (
                         <ProductCard key={product?.id} data={product} />
                     ))}
-                    {/* <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard /> */}
+                    
                 </div>
+            
                 {/* products grid end */}
             </Wrapper>
         </main>
@@ -46,3 +41,9 @@ export async function getStaticProps() {
         props: { products },
     };
 }
+
+
+
+
+
+

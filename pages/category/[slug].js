@@ -92,16 +92,16 @@ export default Category;
 export async function getStaticPaths() {
     const category = await fetchDataFromApi("/api/categories?populate=*");
     const paths = category?.data?.map((c) => ({
-        params: {
-            slug: c.attributes.slug,
-        },
+      params: {
+        slug: c.attributes.slug,
+      },
     }));
-
+  
     return {
-        paths: paths || [],
-        fallback: false,
+      paths: paths || [],
+      fallback: true, // Set fallback to true
     };
-}
+  }
 
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { slug } }) {
